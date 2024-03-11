@@ -9,7 +9,7 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """Defines the Place model."""
+    """Defines the Place model"""
 
     city_id = ""
     user_id = ""
