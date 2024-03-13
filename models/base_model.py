@@ -2,7 +2,7 @@
 
 """A module that defines the Base Model"""
 
-from datetime import datetime
+from datetime import datetime as DT
 from typing import Any
 from uuid import uuid4
 import models
@@ -20,12 +20,12 @@ class BaseModel:
 
                 # ensure the date and time is set correctly
                 if key in ["updated_at", "created_at"]:
-                    value = datetime.fromisoformat(value)
+                    value = DT.fromisoformat(value)
 
                 self.__dict__[key] = value
         else:
             self.id = str(uuid4())
-            self.created_at = datetime.now()
+            self.created_at = DT.now()
             self.updated_at = self.created_at
             models.storage.new(self)
 
@@ -48,12 +48,12 @@ class BaseModel:
             __value (Any): The value for the attribute.
         """
         if __name != "update_at":
-            self.__dict__["updated_at"] = datetime.now()
+            self.__dict__["updated_at"] = DT.now()
             self.__dict__[__name] = __value
 
     def save(self) -> None:
         """Save the instance and updates the `updated_at`"""
-        self.updated_at = datetime.now()
+        self.updated_at = DT.now()
 
         models.storage.save()
 
