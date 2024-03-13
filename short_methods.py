@@ -12,9 +12,9 @@ class ShortMethods:
     """Defines useful short methods that are heavily used during testing."""
 
     __random_attributes = {
-        "first_name": ["John", "Lucy", "Lisa", "Bob", "Betty"],
-        "last_name": ["Doe", "Sickle", "Walters", "Range", "Holberton"],
-        "age": [45, 98, 23, 40, 12, 67],
+        "first_name": ["Nancy", "Love", "Kennedy", "Willy", "Kobe"],
+        "last_name": ["Bamidele", "Agyeman", "Asare", "Korsah", "Bryant"],
+        "age": [26, 26, 23, 31, 43, 49],
     }
 
     @staticmethod
